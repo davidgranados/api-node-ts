@@ -38,3 +38,6 @@ METODOS:
 | **Inicio - P1** | <span style="color: #94fc03">PRACTICO</span>           | Agregando dependencias a utilizar            |
 | **Inicio - P1** | <span style="color: #94fc03">PRACTICO</span>           | Configurando `Express`                       |
 | **Inicio - P1** | <span style="color: #94fc03">PRACTICO</span>           | Levantando un servidor a traves de una clase |
+| **Ruteo - P2**  | <span style="color: #fc7b03">TEORICO / PRACTICO</span> | Aplicar un prefijo global para nuestra API   |
+| **Ruteo - P2**  | <span style="color: #94fc03">PRACTICO</span>           | Generando mi primera ruta                    |
+| **Ruteo - P2**  | <span style="color: #94fc03">PRACTICO</span>           | Ejecutando lo realizado en Postman           |
