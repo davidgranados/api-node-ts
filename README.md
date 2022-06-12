@@ -41,3 +41,9 @@ METODOS:
 | **Ruteo - P2**  | <span style="color: #fc7b03">TEORICO / PRACTICO</span> | Aplicar un prefijo global para nuestra API   |
 | **Ruteo - P2**  | <span style="color: #94fc03">PRACTICO</span>           | Generando mi primera ruta                    |
 | **Ruteo - P2**  | <span style="color: #94fc03">PRACTICO</span>           | Ejecutando lo realizado en Postman           |
+
+| CLASE 2         | Metodo                                                 | Contenido                                                   |
+| --------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
+| **Ruteo**       | <span style="color: #94fc03">PRACTICO</span>           | Modalidad de ruta para aplicar en un servidor basado en POO |
+| **Ruteo**       | <span style="color: #94fc03">PRACTICO</span>           | Generando rutas extendidas de una ruta base                 |
+| **Controlador** | <span style="color: #fc7b03">TEORICO / PRACTICO</span> | ¿Que es un controlador? Explicado en ruta                   |
