@@ -1,13 +1,17 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-import { UserRouter } from "./router/user.router";
 
-class ServerBootstrap {
+import { UserRouter } from "./router/user.router";
+import { Settings } from "./config/settings";
+
+class ServerBootstrap extends Settings {
   public app: express.Application = express();
-  private port: number = 8009;
+  private port: number = this.getNumberEnv("PORT");
 
   constructor() {
+    super();
+
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(morgan("dev"));
