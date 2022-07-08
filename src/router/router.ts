@@ -5,9 +5,9 @@ export class BaseRouter<TController> {
   public controller: TController;
   // public middleware
 
-  constructor(controller: { new (): TController }) {
+  constructor(Controller: { new (): TController }) {
     this.router = Router();
-    this.controller = new controller();
+    this.controller = new Controller();
     this.routes();
   }
 
