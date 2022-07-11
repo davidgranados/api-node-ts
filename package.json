@@ -9,16 +9,8 @@
     "start:dev": "tsc && concurrently \"tsc -w\" \"nodemon dist/server.js\"",
     "start:prod": "export NODE_ENV=production && npm start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rodrigoalejandrorios/api-nodejs-typescript.git"
-  },
   "author": "david",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rodrigoalejandrorios/api-nodejs-typescript/issues"
-  },
-  "homepage": "https://github.com/rodrigoalejandrorios/api-nodejs-typescript#readme",
   "dependencies": {
     "class-validator": "^0.13.2",
     "cors": "^2.8.5",
