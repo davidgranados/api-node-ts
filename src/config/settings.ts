@@ -1,4 +1,6 @@
 import * as dotenv from "dotenv";
+import { DataSource } from "typeorm";
+import { SnakeNamingStrategy } from "typeorm-naming-strategies";
 
 export abstract class Settings {
   constructor() {
@@ -25,5 +27,21 @@ export abstract class Settings {
       arrEnv.unshift(...stringToArray);
     }
     return `.${arrEnv.join(".")}`;
+  }
+
+  public get dataSource(): DataSource {
+    return new DataSource({
+      type: "postgres",
+      host: this.getEnv("DB_HOST")?.trim() ?? "",
+      port: this.getNumberEnv("DB_PORT") ?? 5432,
+      username: this.getEnv("DB_USER")?.trim() ?? "",
+      password: this.getEnv("DB_PASS")?.trim() ?? "",
+      database: this.getEnv("DB_NAME")?.trim() ?? "",
+      entities: [__dirname + "/../**/*.entity{.ts,.js}"],
+      migrations: [__dirname + "/../migrations/*{.ts,.js}"],
+      synchronize: true,
+      logging: false,
+      namingStrategy: new SnakeNamingStrategy(),
+    });
   }
 }
