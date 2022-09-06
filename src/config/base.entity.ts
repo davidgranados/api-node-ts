@@ -5,9 +5,9 @@ export class BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id!: string;
 
-  @CreateDateColumn({name: 'created_at', type: 'timestamp'})
+  @CreateDateColumn({ name: 'created_at', type: 'timestamp' })
   createdAt!: Date;
 
-  @CreateDateColumn({name: 'updated_at', type: 'timestamp'})
+  @CreateDateColumn({ name: 'updated_at', type: 'timestamp' })
   updatedAt!: Date;
 }

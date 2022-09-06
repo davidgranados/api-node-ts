@@ -7,6 +7,6 @@ export class UserRouter extends BaseRouter<UserController> {
   }
 
   routes() {
-    this.router.get("/user", this.controller.getUsers);
+    this.router.get("/users", this.controller.getUsers);
   }
 }

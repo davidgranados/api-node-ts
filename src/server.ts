@@ -2,7 +2,7 @@ import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
 
-import { UserRouter } from './router/user.router'
+import { UserRouter } from './routes/user.router'
 import { Settings } from './config/settings'
 
 class ServerBootstrap extends Settings {
@@ -14,14 +14,18 @@ class ServerBootstrap extends Settings {
 
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: true }))
-
-    this.dbConnect()
-
     this.app.use(morgan('dev'))
     this.app.use(cors())
     this.app.use('/api/', this.routers())
 
-    this.listen()
+    this.dbConnect()
+      .then(() => {
+        console.log('Data Source has been initialized!')
+        this.listen()
+      })
+      .catch((err) => {
+        console.error('Error during Data Source initialization:', err)
+      })
   }
 
   routers(): Array<express.Router> {
@@ -29,14 +33,7 @@ class ServerBootstrap extends Settings {
   }
 
   async dbConnect() {
-    this.dataSource
-      .initialize()
-      .then(() => {
-        console.log('Data Source has been initialized!')
-      })
-      .catch((err) => {
-        console.error('Error during Data Source initialization:', err)
-      })
+    return this.dataSource.initialize()
   }
 
   public listen(): void {

@@ -24,12 +24,13 @@ export abstract class Settings {
     const arrEnv = ["env"];
     if (path.length > 0) {
       const stringToArray = path.split(".");
-      arrEnv.unshift(...stringToArray);
+      arrEnv.push(...stringToArray);
     }
     return `.${arrEnv.join(".")}`;
   }
 
   public get dataSource(): DataSource {
+    console.log(this.getEnv("DB_HOST"), this.getEnv("DB_PORT"));
     return new DataSource({
       type: "postgres",
       host: this.getEnv("DB_HOST")?.trim() ?? "",
